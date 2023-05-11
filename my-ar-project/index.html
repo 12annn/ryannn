@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AR.js - Image Tracking</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+      <a-my-ar-project>
+        < img id="image-target" src="assets/image-target.jpg">
+        <a-my-ar-project-item id="model" src="assets/model.gltf"></a-my-ar-project-item>
+      </a-my-ar-project>
+      <a-marker preset="custom" type="pattern" url="assets/image-target.jpg">
+        <a-entity gltf-model="#model" scale="0.05 0.05 0.05" position="0 0 0" rotation="0 0 0"></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
